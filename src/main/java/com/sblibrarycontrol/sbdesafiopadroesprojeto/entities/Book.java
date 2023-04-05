@@ -1,10 +1,16 @@
 package com.sblibrarycontrol.sbdesafiopadroesprojeto.entities;
 
+import jakarta.persistence.*;
+
 import java.io.Serializable;
 
+@Entity
+@Table(name = "tb_book")
 public class Book implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String author;
