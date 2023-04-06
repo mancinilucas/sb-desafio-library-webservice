@@ -1,5 +1,6 @@
 package com.sblibrarycontrol.sbdesafiopadroesprojeto.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sblibrarycontrol.sbdesafiopadroesprojeto.entities.pk.LoanItemPK;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
@@ -14,7 +15,7 @@ public class LoanItem implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @EmbeddedId
-    private LoanItemPK id;
+    private LoanItemPK id = new LoanItemPK();
 
     public LoanItem() {
     }
@@ -24,6 +25,7 @@ public class LoanItem implements Serializable {
         id.setBook(book);
     }
 
+    @JsonIgnore
     public Loan getLoan(){
         return id.getLoan();
     }

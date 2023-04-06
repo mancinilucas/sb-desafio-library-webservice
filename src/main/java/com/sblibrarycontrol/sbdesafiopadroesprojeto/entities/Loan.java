@@ -24,6 +24,9 @@ public class Loan implements Serializable {
     @JoinColumn(name = "member_id")
     private User member;
 
+    @OneToOne(mappedBy = "id.loan")
+    private LoanItem loanItem;
+
     public Loan(){}
 
     public Loan(Long id, Instant momentOfLoan, LoanStatus loanStatus, User member) {
@@ -65,6 +68,10 @@ public class Loan implements Serializable {
 
     public void setMember(User member) {
         this.member = member;
+    }
+
+    public LoanItem getLoanItem() {
+        return loanItem;
     }
 
     @Override
