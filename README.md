@@ -5,6 +5,10 @@ Através da parceria entre a plataforma de ensino Digital Innovation One e o Ban
 
 O desafio proposto possuía o objetivo de colocar em prática os conhecimentos adquiridos sobre padrões de projeto utilizando Java e Spring Framework, conteúdos expostos pelo instrutor Venilton Jr.
 
+Trata-se de uma aplicação para controle de empréstimo de livros com operações CRUD para:
+* Adicionar, Inserir, modificar e deletar livros do catálogo.
+* Adicionar, Inserir, modificar e deletar usuários.
+
 ## Stack utilizada
 
 
