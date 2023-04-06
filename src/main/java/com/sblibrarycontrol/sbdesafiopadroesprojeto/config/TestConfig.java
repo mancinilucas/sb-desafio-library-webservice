@@ -2,6 +2,7 @@ package com.sblibrarycontrol.sbdesafiopadroesprojeto.config;
 
 import com.sblibrarycontrol.sbdesafiopadroesprojeto.entities.Book;
 import com.sblibrarycontrol.sbdesafiopadroesprojeto.entities.Loan;
+import com.sblibrarycontrol.sbdesafiopadroesprojeto.entities.LoanStatus;
 import com.sblibrarycontrol.sbdesafiopadroesprojeto.entities.User;
 import com.sblibrarycontrol.sbdesafiopadroesprojeto.repositories.BookRepository;
 import com.sblibrarycontrol.sbdesafiopadroesprojeto.repositories.LoanRepository;
@@ -36,9 +37,9 @@ public class TestConfig implements CommandLineRunner {
         User u1 = new User(null, "Leticia Santos", "739999944444");
         User u2 = new User(null, "Ana Silva", "73888883333");
 
-        Loan l1 = new Loan(null, Instant.parse("2023-02-18T14:50:07Z"), u1);
-        Loan l2 = new Loan(null, Instant.parse("2023-03-25T20:20:07Z"), u2);
-        Loan l3 = new Loan(null, Instant.parse("2023-04-02T16:53:07Z"), u1);
+        Loan l1 = new Loan(null, Instant.parse("2023-02-18T14:50:07Z"), LoanStatus.RETURNED, u1);
+        Loan l2 = new Loan(null, Instant.parse("2023-03-25T20:20:07Z"), LoanStatus.LOANED,u2);
+        Loan l3 = new Loan(null, Instant.parse("2023-04-02T16:53:07Z"), LoanStatus.LOANED,u1);
 
         bookRepository.saveAll(Arrays.asList(b1, b2));
         userRepository.saveAll(Arrays.asList(u1,u2));
